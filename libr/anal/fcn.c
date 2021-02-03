@@ -875,8 +875,7 @@ repeat:
 					movdisp = op->disp;
 				}
 			}
-			if (anal->opt.hpskip && regs_exist (op->src[0], op->dst)
-			&& !strcmp (op->src[0]->reg->name, op->dst->reg->name)) {
+			if (anal->opt.hpskip && regs_exist (op->src[0], op->dst) && !strcmp (op->src[0]->reg->name, op->dst->reg->name)) {
 				skip_ret = skip_hp (anal, fcn, op, bb, addr, oplen, delay.un_idx, &idx);
 				if (skip_ret == 1) {
 					goto repeat;
